@@ -1,0 +1,80 @@
+{
+  "name": "dsh-slipway",
+  "version": "0.1.0",
+  "description": "Ship a local DSH plugin project to GitHub and into the plugin market in one call: preflight checks, per-file upload with byte verification, the market registry PR, then pull every published file back and compare bytes.",
+  "type": "module",
+  "main": "lib/index.js",
+  "bin": {
+    "dsh-slipway": "bin/dsh-slipway.mjs"
+  },
+  "exports": {
+    ".": "./lib/index.js",
+    "./core": "./lib/core.js",
+    "./publish": "./lib/publish.js",
+    "./github": "./lib/github.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "bin",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "publish",
+    "release",
+    "github",
+    "plugin-market",
+    "registry",
+    "pull-request",
+    "release-automation",
+    "dry-run",
+    "发布",
+    "上新"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node test/smoke.mjs"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/7gzgn/dsh-slipway.git"
+  },
+  "homepage": "https://github.com/7gzgn/dsh-slipway#readme",
+  "bugs": {
+    "url": "https://github.com/7gzgn/dsh-slipway/issues"
+  },
+  "dsh": {
+    "compatibility": {
+      "dshReleases": {
+        "0.2.0-rc.2": "compatible"
+      }
+    },
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": ">=4.0.4 <5.0.0",
+    "@deepseek-ai/dsh-system-prompt": ">=0.2.0-rc.2 <0.3.0-0",
+    "@deepseek-ai/dsh-tools": ">=0.2.0-rc.2 <0.3.0-0"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/dsh-system-prompt": {
+      "optional": true
+    },
+    "@deepseek-ai/dsh-tools": {
+      "optional": true
+    }
+  }
+}
