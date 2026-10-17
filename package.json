@@ -1,6 +1,6 @@
 {
   "name": "dsh-slipway",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Ship a local DSH plugin project to GitHub and into the plugin market in one call: preflight checks, per-file upload with byte verification, the market registry PR, then pull every published file back and compare bytes.",
   "type": "module",
   "main": "lib/index.js",
@@ -57,7 +57,8 @@
   "dsh": {
     "compatibility": {
       "dshReleases": {
-        "0.2.0-rc.2": "compatible"
+        "0.2.0-rc.2": "compatible",
+        "0.2.1-rc.2": "compatible"
       }
     },
     "bundle": {
